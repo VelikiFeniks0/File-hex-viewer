@@ -22,9 +22,6 @@ file_dialog()
 
 clock = pygame.time.Clock()
 
-# ignore this, this is just some text you can see on the right side of the window
-size_text = pygame.font.SysFont('Courier', 20).render(f"Size: {str(os.path.getsize(open_file))} Bytes", True, (255,255,255))
-filename_text = pygame.font.SysFont('Courier',20).render(f"File: {str(open_file)}", True, (255,255,255))
 
 # square surface
 class Square:
@@ -57,6 +54,10 @@ while run:
     display.fill((0,0,0))
 
     mouse = pygame.mouse.get_pos()
+    
+    # ignore this, this is just some text you can see on the right side of the window
+    size_text = pygame.font.SysFont('Courier', 20).render(f"Size: {str(os.path.getsize(open_file))} Bytes", True, (255,255,255))
+    filename_text = pygame.font.SysFont('Courier',20).render(f"File: {str(open_file)}", True, (255,255,255))
 
     display.blit(size_text, (pygame.display.get_window_size()[0]-770, 70))
     display.blit(filename_text, (pygame.display.get_window_size()[0]-770, 20))
